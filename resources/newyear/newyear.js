@@ -1,6 +1,6 @@
 function isNewYearClose() {
     var d = new Date();
-    return (d.getMonth() == 11 && d.getDate() >= 24) || (d.getMonth() == 0 && d.getDate() <= 7);
+    return (d.getMonth() == 11 && d.getDate() >= 24) || (d.getMonth() == 0 && d.getDate() <= 14);
 }
 
 var is_garland_visible_on_page_load = (localStorage.getItem('nnmnylights') != 'hide') && isNewYearClose();
