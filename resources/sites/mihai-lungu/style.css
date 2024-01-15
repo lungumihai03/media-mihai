@@ -13,6 +13,10 @@
  	background-color: #333;
 	color: #fff;
 }
+.modal-content {
+    background-color: #fefefe;
+	color:#000000;
+}
 .dark-mode .culoare {
 		  color:#C3C3C3;
 	  }
