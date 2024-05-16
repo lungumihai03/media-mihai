@@ -1,0 +1,94 @@
+/* inceput style pentru site*/
+	 .responsive-image {
+  max-width:70%; 
+  height: auto;
+  width: auto\9; /* IE8 */
+}
+	 /* Facem imaginea responsive în funcție de lățimea ecranului */
+@media (max-width: 767px) {
+  .responsive-image {
+    width: 50vw; /* ajustați valoarea după preferință */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .responsive-image {
+    width: 40vw; /* ajustați valoarea după preferință */
+  }
+}
+
+@media (min-width: 992px) {
+  .responsive-image {
+    width: 30vw; /* ajustați valoarea după preferință */
+  }
+}
+	 
+	 
+	 
+	 .premii{
+		 color:black;
+		 font-style: oblique;
+	 }
+	 .premii:hover{
+		 color:rgba(92,64,27,1.00);
+	 }
+	 .dark-mode .premii{
+		 color:white;
+	 }
+	 .dark-mode .premii:hover{
+		 color:rgba(231,189,161,1.00)
+	 }
+	 .vremea{
+		 border-radius: 20px;
+		 margin-right: 15px;
+		 margin-left: 15px;
+	 }
+
+
+	 .drep {
+		 padding: 10px;
+		 width: auto;
+		 height:auto;
+		 background-color: rgba(222,196,154,0.20);
+		 border: 0.5px solid rgba(222,196,154,1);
+		 border-radius: 20px;
+		  box-shadow: 0 0 20px rgba(222,196,154, 0.5);
+		 
+	 }
+	 .dark-mode .drep{
+		 width: auto;
+		 height:auto;
+		 background-color: rgba(255,255,255,0.10);
+		 border: 0.5px solid white;
+		 border-radius: 20px;
+		  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+	 }
+
+
+	
+	 .photo {
+		 border-radius: 20px;
+	 }
+	 /* sfarsit 1 */
+	 
+	 
+	 
+	.navbar-nav > li > a {
+  position: relative;
+}
+
+.navbar-nav > li > a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.navbar-nav > li > a:hover::after {
+  width: 100%;
+  left: 0;
+}
