@@ -1,0 +1,59 @@
+/* adaugare la site*/
+		.games{
+			max-width: 480px;
+			max-height: 270px;
+			width: auto;
+			height: auto;
+			
+		}
+		
+		.drep{
+			width:auto;
+			height: auto;
+			background-color: rgba(222,196,154,0.20);
+			border: 0.5px solid rgba(222,196,154,1);
+		 border-radius: 20px;
+		  box-shadow: 0 0 20px rgba(222,196,154, 0.5);
+		}
+		.card {
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    
+    transition: box-shadow 0.75s ease-in-out;
+		}
+		.dark-mode .drep{
+		 width: auto;
+		 height:auto;
+		 background-color: rgba(255,255,255,0.10);
+		 border: 0.5px solid white;
+		 border-radius: 20px;
+		  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+	 }
+		
+		.card:hover{
+			box-shadow: 0 0 35px rgba(0, 0, 0, 0.7);
+		}
+		
+		.responsive-image {
+  max-width:100%; 
+  height: auto;
+  width: auto\9; /* IE8 */
+}
+
+/* Facem imaginea responsive în funcție de lățimea ecranului */
+@media (max-width: 767px) {
+  .responsive-image {
+    width: 40vw; /* ajustați valoarea după preferință */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .responsive-image {
+    width: 40vw; /* ajustați valoarea după preferință */
+  }
+}
+
+@media (min-width: 992px) {
+  .responsive-image {
+    width: 30vw; /* ajustați valoarea după preferință */
+  }
+}
