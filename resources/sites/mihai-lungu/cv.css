@@ -1,0 +1,346 @@
+body {
+            font-family: 'Lora', serif;
+        }
+		.navbar-nav > li > a {
+  position: relative;
+}
+.col-md-2 { 
+  max-width: 16.66%; /*  1/6 dintr-un rând în vederile medii sau mai mari */
+  flex: 0 0 16.66%; /* Setați o lățime de bază egală pentru elemente */
+}
+
+		@media (max-width: 768px) { 
+    .col-md-2 {
+        max-width: 50%;  /* Ocupă maxim jumătate din spațiu  în vederile mici  */
+        flex: 0 0 50%;
+    }
+}
+
+.navbar-nav > li > a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.navbar-nav > li > a:hover::after {
+  width: 100%;
+  left: 0;
+}
+		.site{
+			margin-left:10vw;
+			margin-right:10vw;
+		}
+		@media (max-width: 768px) {
+  .site {
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .site {
+    margin-left: 7vw;
+    margin-right: 7vw;
+  }
+}
+		.icon-bar{
+			background-color: black;
+		}
+		.info{
+			padding: 20px;
+		}
+		.about{
+			width: auto;
+			height: auto;
+			background-color:rgba(255,255,255,0.83);
+			padding: 10px;
+			margin: 10px;
+			border-radius: 20px;
+			border: 1px solid green;
+			box-shadow: 0 0 5px rgba(0,0,0,0.50);
+			
+		}
+		.portfolio{
+			width: auto;
+			height: auto;
+			background-color:rgba(255,255,255,0.83);
+			padding: 10px;
+			margin: 10px;
+			border-radius: 20px;
+			border: 1px solid green;
+			box-shadow: 0 0 5px rgba(0,0,0,0.50);
+		}
+		
+		.lang-tot{
+			margin-left: 40px;
+			margin-top: 23px;
+			width: 60%;
+			height: 6px;
+			
+			border-radius: 50px;
+			
+		}
+		.lang-plus {
+  width: 15%;
+  height: 25px; /* Înălțimea inițială */
+  background-color: rgba(11, 107, 0, 1.00);
+  margin-right: 20px;
+  transform: skew(-45deg); /* Rotirea paralelogramului */
+	border-color: black;
+			border: solid 1.5px;
+  /* Media query pentru ecrane de dimensiuni mici */
+  @media screen and (max-width: 768px) {
+    height: 20px; /* Reducem înălțimea pentru ecrane mai mici */
+	  margin-right:10px;
+  }
+			@media screen and (max-width: 500px) {
+    height: 15px; /* Reducem înălțimea pentru ecrane mai mici */
+	  margin-right:6px;
+  }
+}
+		.lang-min {
+  width: 15%;
+  height: 25px; /* Înălțimea inițială */
+  background-color: rgba(255,255,255,1.00);
+  margin-right: 20px;
+  transform: skew(-45deg); /* Rotirea paralelogramului */
+border-color: black;
+			border: solid 1.5px;
+  /* Media query pentru ecrane de dimensiuni mici */
+  @media screen and (max-width: 768px) {
+    height: 20px; /* Reducem înălțimea pentru ecrane mai mici */
+	  margin-right:10px;
+  }
+			@media screen and (max-width: 500px) {
+    height: 15px; /* Reducem înălțimea pentru ecrane mai mici */
+	  margin-right:6px;
+  }
+}
+		
+			
+		.skills-img{
+			width: 38px;
+			height: 38px;
+		}
+		.nav-bar-color-text{
+			color:black;
+			font-size:20px;
+		}
+		.photo{
+			width: 250px;
+			height: 250px;
+			border-radius:200px;
+			border: 2px solid green;
+			box-shadow: 0 0 10px rgba(0,0,0,0.60);
+		}
+		.skills{
+			width: auto;
+			height: auto;
+			background-color:rgba(255,255,255,0.83);
+			padding: 10px;
+			margin: 10px;
+			border-radius: 20px;
+			border: 1px solid green;
+			box-shadow: 0 0 5px rgba(0,0,0,0.50);
+		}
+		.education{
+			width: auto;
+			height: auto;
+			background-color:rgba(255,255,255,0.83);
+			padding: 10px;
+			margin: 10px;
+			border-radius: 20px;
+			border: 1px solid green;
+			box-shadow: 0 0 5px rgba(0,0,0,0.50);
+		}
+		.education h2{
+			margin-left: 15px;
+		}
+		.education h3{
+			margin-left:15px;
+		}
+		.max{
+			background-color: green;
+			height: 2px;
+			margin-right: 15px;
+			margin-bottom: 3px;
+			margin-top: 3px;
+		}
+		
+		.awards{
+			width: auto;
+			height: auto;
+			background-color:rgba(255,255,255,0.83);
+			padding: 10px;
+			margin: 10px;
+			border-radius: 20px;
+			border: 1px solid green;
+			box-shadow: 0 0 5px rgba(0,0,0,0.50);
+			
+		}
+		h3.info{
+			margin-bottom: -5px;
+			margin-top: -25px;
+			margin-left: -18px;
+			
+		}
+		h1.info{
+			margin-bottom: 10px;
+			margin-left: -18px;
+		}
+.total {
+    margin-left: 15px;
+    margin-top: 15px;
+	margin-right: 15px;
+    width: 100%;
+    height: 6px;
+    background-color: rgba(156, 156, 156, 1.00);
+    border-radius: 50px;
+}
+
+.html, .css, .js, .cpp, .csharp, .sql, .python, .office, .adobe {
+    height: 100%;
+    background-color: rgba(11, 107, 0, 1.00);
+    border-radius: 50px;
+    transition: width 4.5s ease; /* Animarea tranziției */
+}
+
+		
+		.for-skills{
+			display: flex;
+			margin-bottom: -10px;
+			
+		}
+		
+		.for-lang{
+			display:flex;
+			
+			
+		}
+		.for-lang h2{
+			margin-top: 3px;
+		}
+		.for-awards{
+			display: flex;
+			
+			
+		}
+		.for-awards h2{
+			margin-top:4px;
+			margin-left:10px;
+		}
+		
+		html {
+    scroll-behavior: smooth;
+}
+* {
+            box-sizing: border-box;
+        }
+
+        span.t {
+        background: #fff;
+        border-radius: 7px;
+        box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.42);
+        display: grid;
+        
+    }
+
+	   .mp{
+		   width: 90%;
+		   height: 90%;
+	   }
+	   .mp_1{
+		   width: 70%;
+		   height:70%;
+	   }
+        img.land {
+            border-radius: 4px;
+            width: 96%;
+            height: 96%;
+            object-fit: cover;
+			cursor: pointer;
+        }
+
+        span.template-sidebar--left {
+            grid-template: 
+                "sidebar mainA mainA"
+                "sidebar mainB mainB";
+        }
+
+        span.template-sidebar--left > :nth-child(1) {
+            grid-area: sidebar;
+        }
+
+        span.template-sidebar--right {
+            grid-template: 
+                "mainA mainA sidebar"
+                "mainB mainB sidebar";
+        }
+
+        span.template-sidebar--right > :nth-child(3) {
+            grid-area: sidebar;
+        }
+a{
+		color:rgba(19,185,0,1.00);
+	}
+	a:hover{
+		color:rgba(11, 107, 0, 1.00);
+	}
+	
+	</style>
+
+	<style>
+	
+		.button {
+  margin: 10px;
+			background-color: green;
+			width: 320px;
+			height: 40px;
+			color:white;
+			border: none;
+			box-shadow: 0 0 15px rgba(0,0,0,0.50);
+			transition: box-shadow 0.75s ease-in-out;
+			
+}
+		.button:hover{
+			transition: background-color: 0.75s ease-in-out;
+			background-color: #006712;
+			box-shadow: 0 0 20px rgba(0,0,0,0.70);
+			
+		}
+/* Stilurile pentru fereastra modală */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            width: 50%;
+        }
+
+        /* Stiluri pentru imagine */
+        #modal-image {
+            width: 50%;
+            float: right;
+            margin-right: 10px;
+        }
+
+        /* Stiluri suplimentare */
+        .center {
+            text-align: center;
+        }
