@@ -51,4 +51,101 @@ document.addEventListener('DOMContentLoaded', incarcaAnimatie);
  
 
 
+		function mp3_mod(){
+			document.getElementById("mp3").style.display = "block";
+		}
+		function closemp3(event) {
+            if (event.target === document.getElementById("mp3")) {
+                document.getElementById("mp3").style.display = "none";
+            }
+        }
+		function calc_mod(){
+			document.getElementById("calc").style.display = "block";
+		}
+		function closecalc(event) {
+            if (event.target === document.getElementById("calc")) {
+                document.getElementById("calc").style.display = "none";
+            }
+        }
+		function about_mod(){
+			document.getElementById("aboutpc").style.display = "block";
+		}
+		function closeabout(event) {
+            if (event.target === document.getElementById("aboutpc")) {
+                document.getElementById("aboutpc").style.display = "none";
+            }
+        }
+		function gen_mod(){
+			document.getElementById("gen").style.display = "block";
+		}
+		function closegen(event) {
+            if (event.target === document.getElementById("gen")) {
+                document.getElementById("gen").style.display = "none";
+            }
+        }
+		function hr_mod(){
+			document.getElementById("hr").style.display = "block";
+		}
+		function closehr(event) {
+            if (event.target === document.getElementById("hr")) {
+                document.getElementById("hr").style.display = "none";
+            }
+        }
+		function tr_mod(){
+			document.getElementById("tr").style.display = "block";
+		}
+		function closetr(event) {
+            if (event.target === document.getElementById("tr")) {
+                document.getElementById("tr").style.display = "none";
+            }
+        }
+		function note_mod(){
+			document.getElementById("note").style.display = "block";
+		}
+		function closenote(event) {
+            if (event.target === document.getElementById("note")) {
+                document.getElementById("note").style.display = "none";
+            }
+        }
+		function tts_mod(){
+			document.getElementById("tts").style.display = "block";
+		}
+		function closetts(event) {
+            if (event.target === document.getElementById("tts")) {
+                document.getElementById("tts").style.display = "none";
+            }
+        }
+		function mihai_mod(){
+			document.getElementById("mihai").style.display = "block";
+		}
+		function closemihai(event) {
+            if (event.target === document.getElementById("mihai")) {
+                document.getElementById("mihai").style.display = "none";
+            }
+        }
+		function tpa_mod(){
+			document.getElementById("tpa").style.display = "block";
+		}
+		function closetpa(event) {
+            if (event.target === document.getElementById("tpa")) {
+                document.getElementById("tpa").style.display = "none";
+            }
+        }
+		function dev_mod(){
+			document.getElementById("dev").style.display = "block";
+		}
+		function closedev(event) {
+            if (event.target === document.getElementById("dev")) {
+                document.getElementById("dev").style.display = "none";
+            }
+        }
+		function fmti_mod(){
+			document.getElementById("fmti").style.display = "block";
+		}
+		function closefmti(event) {
+            if (event.target === document.getElementById("fmti")) {
+                document.getElementById("fmti").style.display = "none";
+            }
+        }
+		
 	
