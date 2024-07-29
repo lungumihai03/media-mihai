@@ -20,3 +20,28 @@
 		 border-radius: 20px;
 		  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 	 }
+.responsive-image {
+  max-width:100%; 
+  height: auto;
+  width: auto\9; /* IE8 */
+}
+@media (max-width: 769px) {
+  .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1150px) {
+  .col-md-6, .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1151px) {
+  .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
