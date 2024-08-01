@@ -1,47 +1,66 @@
-const apiKey = '495eaa3e059175b43d98a158'; // Replace with your API key
 const baseCurrencies = ['USD', 'EUR', 'RON', 'UAH', 'RUB'];
 const icons = ['us', 'eu', 'ro', 'ua', 'ru'];
-const sites = [];
+const sites = icons.map(icon => `https://www.mihailungu.com/curs-valutar/contry/${icon}.png`);
 
-for (let i = 0; i < 5; i++) {
-    sites[i] = `https://www.mihailungu.com/curs-valutar/contry/${icons[i]}.png`;
+function formatDate(date) {
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;
 }
 
-const fetchRates = (baseCurrency) => {
-    const url = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/${baseCurrency}`;
+async function fetchXMLRates() {
+    const today = new Date();
+    const formattedDate = formatDate(today);
+    const url = `https://bnm.md/ro/official_exchange_rates?get_xml=1&date=${formattedDate}`;
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
-    return fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            if (data.result === 'success') {
-                return { base: baseCurrency, rate: data.conversion_rates.MDL };
-            } else {
-                console.error('Error fetching exchange rates:', data['error-type']);
-                return null;
+    try {
+        const response = await fetch(proxyUrl + url);
+        const text = await response.text();
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(text, "text/xml");
+        return xmlDoc;
+    } catch (error) {
+        console.error('Error fetching XML:', error);
+        return null;
+    }
+}
+
+function extractRate(xmlDoc, charCode) {
+    const valutes = xmlDoc.getElementsByTagName('Valute');
+    for (let valute of valutes) {
+        const charCodeElement = valute.getElementsByTagName('CharCode')[0];
+        if (charCodeElement && charCodeElement.textContent === charCode) {
+            const valueElement = valute.getElementsByTagName('Value')[0];
+            if (valueElement) {
+                return parseFloat(valueElement.textContent);
             }
-        })
-        .catch(error => {
-            console.error('Error fetching exchange rates:', error);
-            return null;
-        });
-};
+        }
+    }
+    return null;
+}
 
-const displayRates = async () => {
+async function displayRates() {
     const ratesContainer = document.getElementById('rates-container');
     ratesContainer.innerHTML = 'Loading...';
 
-    const ratesPromises = baseCurrencies.map(fetchRates);
-    const rates = await Promise.all(ratesPromises);
+    const xmlDoc = await fetchXMLRates();
+    if (!xmlDoc) {
+        ratesContainer.innerHTML = 'Error loading rates';
+        return;
+    }
 
     ratesContainer.innerHTML = '';
-    rates.forEach((rate, index) => {
-        if (rate) {
+    baseCurrencies.forEach((currency, index) => {
+        const rate = extractRate(xmlDoc, currency);
+        if (rate !== null) {
             const rateDiv = document.createElement('div');
             rateDiv.className = 'rate';
-            rateDiv.innerHTML = `<img src="${sites[index]}" alt="${rate.base} flag" style="width:35px; height:23px; margin-right: 10px;"> ${rate.base}: ${rate.rate.toFixed(4)} Lei`;
+            rateDiv.innerHTML = `<img src="${sites[index]}" alt="${currency} flag" style="width:35px; height:23px; margin-right: 10px;"> ${currency}: ${rate.toFixed(4)} Lei`;
             ratesContainer.appendChild(rateDiv);
         }
     });
-};
+}
 
 displayRates();
