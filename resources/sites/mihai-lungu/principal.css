@@ -38,17 +38,15 @@
 	 .dark-mode .premii:hover{
 		 color:rgba(231,189,161,1.00)
 	 }
-	.vremea{
+	.vreme{
 		 border-radius: 20px;
-		 margin-right: 15px;
-		 margin-left: 15px;
+		 
 		 border: 0.5px solid rgba(222,196,154,1);
 		 box-shadow: 0 0 20px rgba(222,196,154, 0.5);
 	 }
-	.dark-mode  .vremea{
+	.dark-mode  .vreme{
 		 border-radius: 20px;
-		 margin-right: 15px;
-		 margin-left: 15px;
+		 
 		 border: 0.5px solid white;
 		box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 	 }
