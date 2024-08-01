@@ -1,0 +1,72 @@
+.converter {
+           border-radius: 20px;
+		
+			 padding: 10px;
+		 width: auto;
+		 height:auto;
+            background-color: rgba(222,196,154,0.20);
+		 border: 0.5px solid rgba(222,196,154,1);
+		 border-radius: 20px;
+		  box-shadow: 0 0 20px rgba(222,196,154, 0.5);
+        }
+	 .dark-mode .converter{
+		 width: auto;
+		 height:auto;
+		 background-color: rgba(255,255,255,0.10);
+		 border: 0.5px solid white;
+		 border-radius: 20px;
+		  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+	 }
+        .converter h2 {
+            margin-top: 0;
+        }
+        .rate {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+	 #rates-container{
+		 font-size:24px;
+}
+	.more {
+    max-width: 180px;
+    min-width: 100px;
+    width: 100%; /* Adjust this percentage as needed */
+    height: 40px;
+    background-color: #FFBE00;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+	
+	transition: background-color 0.2s ease;
+}
+
+@media (max-width: 600px) {
+    .more {
+        width: 100%; /* Increase width for smaller screens */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .more {
+        width: 60%; /* Adjust width for medium screens */
+    }
+}
+
+@media (min-width: 1025px) {
+    .more {
+        width: 100%; /* Adjust width for larger screens */
+    }
+}
+	 .more:hover{
+		 background-color: #99FF00;
+		 
+		 
+	 }
+	 .dark-mode .more{
+		 background-color: #731C00;
+		 transition: background-color 0.2s ease;
+	 }
+	 .dark-mode .more:hover{
+		 background-color: #1D6400;
+	 }
