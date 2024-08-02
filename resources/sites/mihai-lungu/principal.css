@@ -4,6 +4,10 @@
   height: auto;
   width: auto\9; /* IE8 */
 }
+.responsive-img {
+            max-width: 100%;
+            height: auto;
+        }
 	 /* Facem imaginea responsive în funcție de lățimea ecranului */
 @media (max-width: 767px) {
   .responsive-image {
