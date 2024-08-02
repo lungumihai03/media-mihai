@@ -13,10 +13,10 @@ async function fetchXMLRates() {
     const today = new Date();
     const formattedDate = formatDate(today);
     const url = `https://bnm.md/ro/official_exchange_rates?get_xml=1&date=${formattedDate}`;
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const proxyUrl = 'https://api.allorigins.win/raw?url=';
 
     try {
-        const response = await fetch(proxyUrl + url);
+        const response = await fetch(proxyUrl + encodeURIComponent(url));
         const text = await response.text();
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(text, "text/xml");
