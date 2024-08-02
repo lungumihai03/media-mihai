@@ -24,50 +24,40 @@ async function getWeather() {
         var city = document.getElementById('city').value;
         console.log('City:', city);
 
-        const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
-            params: {
-                q: city,
-                appid: '89343885b9482657af7cf879ab377f06',
-                units: 'metric'
-            },
-        });
-
-        const currentWeather = response.data;
+        const currentResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=89343885b9482657af7cf879ab377f06&units=metric`);
+        const currentData = await currentResponse.json();
 
         // Actualizarea vremii curente
-        document.querySelector('.weather-temp').textContent = Math.round(currentWeather.main.temp) + 'ºC';
-        document.querySelector('.weather-desc').textContent = currentWeather.weather[0].description.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-        document.querySelector('.humidity .value').textContent = currentWeather.main.humidity + ' %';
-        document.querySelector('.wind .value').textContent = currentWeather.wind.speed + ' m/s';
-        document.querySelector('.weather-icon').innerHTML = getWeatherIcon(currentWeather.weather[0].icon);
+        document.querySelector('.weather-temp').textContent = Math.round(currentData.main.temp) + 'ºC';
+        document.querySelector('.weather-desc').textContent = currentData.weather[0].description.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        document.querySelector('.humidity .value').textContent = currentData.main.humidity + ' %';
+        document.querySelector('.wind .value').textContent = currentData.wind.speed + ' m/s';
+        document.querySelector('.weather-icon').innerHTML = getWeatherIcon(currentData.weather[0].icon);
 
         const currentDate = new Date();
         document.querySelector('.date-dayname').textContent = currentDate.toLocaleDateString('en-US', { weekday: 'long' });
         document.querySelector('.date-day').textContent = currentDate.toDateString().slice(4, 15);
-        document.querySelector('.location').textContent = currentWeather.name;
+        document.querySelector('.location').textContent = currentData.name;
 
         // Obținerea prognozei pentru următoarele zile
-        const forecastResponse = await axios.get('https://api.openweathermap.org/data/2.5/forecast', {
-            params: {
-                q: city,
-                appid: '89343885b9482657af7cf879ab377f06',
-                units: 'metric'
-            },
-        });
+        const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=89343885b9482657af7cf879ab377f06&units=metric`);
+        const forecastData = await forecastResponse.json();
 
-        const forecastData = forecastResponse.data.list;
         const dailyForecast = {};
 
-        forecastData.forEach((data) => {
+        forecastData.list.forEach((data) => {
             const date = new Date(data.dt * 1000);
             const day = date.toLocaleDateString('en-US', { weekday: 'long' });
 
-            if (!dailyForecast[day] || date.getHours() === 12) {
+            if (!dailyForecast[day]) {
                 dailyForecast[day] = {
                     minTemp: data.main.temp_min,
                     maxTemp: data.main.temp_max,
                     icon: data.weather[0].icon
                 };
+            } else {
+                dailyForecast[day].minTemp = Math.min(dailyForecast[day].minTemp, data.main.temp_min);
+                dailyForecast[day].maxTemp = Math.max(dailyForecast[day].maxTemp, data.main.temp_max);
             }
         });
 
