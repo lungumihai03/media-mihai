@@ -29,12 +29,12 @@
 	 
 	 
 	 
-	 .premii{
+	  .premii{
 		 color:black;
 		 font-style: oblique;
 	 }
 	 .premii:hover{
-		 color:rgba(92,64,27,1.00);
+		 color:rgba(0,172,41,1.00);
 	 }
 	 .dark-mode .premii{
 		 color:white;
@@ -42,28 +42,14 @@
 	 .dark-mode .premii:hover{
 		 color:rgba(231,189,161,1.00)
 	 }
-	.vreme{
-		 border-radius: 20px;
-		 
-		 border: 0.5px solid rgba(222,196,154,1);
-		 box-shadow: 0 0 20px rgba(222,196,154, 0.5);
-	 }
-	.dark-mode  .vreme{
-		 border-radius: 20px;
-		 
-		 border: 0.5px solid white;
-		box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-	 }
-
-
-	 .drep {
+		 .drep {
 		 padding: 10px;
 		 width: auto;
 		 height:auto;
-		 background-color: rgba(222,196,154,0.20);
-		 border: 0.5px solid rgba(222,196,154,1);
-		 border-radius: 20px;
-		  box-shadow: 0 0 20px rgba(222,196,154, 0.5);
+		 background-color: white;
+		 border: 0.5px solid white;
+		 border-radius: 10px;
+		  box-shadow: 0 0 20px rgba(0,0,0, 0.1);
 		 
 	 }
 	 .dark-mode .drep{
@@ -71,14 +57,14 @@
 		 height:auto;
 		 background-color: rgba(255,255,255,0.10);
 		 border: 0.5px solid white;
-		 border-radius: 20px;
+		 border-radius: 10px;
 		  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 	 }
 
 
 	
 	 .photo {
-		 border-radius: 20px;
+		 border-radius: 5px;
 	 }
 	 /* sfarsit 1 */
 	 
