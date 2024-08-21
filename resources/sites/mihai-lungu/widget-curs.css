@@ -1,20 +1,20 @@
 .converter {
-           border-radius: 20px;
+           border-radius: 10px;
 		
 			 padding: 10px;
 		 width: auto;
 		 height:auto;
-            background-color: rgba(222,196,154,0.20);
-		 border: 0.5px solid rgba(222,196,154,1);
-		 border-radius: 20px;
-		  box-shadow: 0 0 20px rgba(222,196,154, 0.5);
+            background-color: white;
+		 border: 0.5px solid white;
+		 border-radius: 10px;
+		  box-shadow: 0 0 20px rgba(0,0,0, 0.1);
         }
 	 .dark-mode .converter{
 		 width: auto;
 		 height:auto;
 		 background-color: rgba(255,255,255,0.10);
 		 border: 0.5px solid white;
-		 border-radius: 20px;
+		 border-radius: 10px;
 		  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 	 }
         .converter h2 {
