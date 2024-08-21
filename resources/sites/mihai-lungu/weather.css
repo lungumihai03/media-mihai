@@ -1,10 +1,10 @@
   
   
 .weather-app {
-    border-radius: 20px;
-		 background-color: rgba(222,196,154,0.20);
-		 border: 0.5px solid rgba(222,196,154,1);
-		 box-shadow: 0 0 20px rgba(222,196,154, 0.5);
+    border-radius: 10px;
+		 background-color: white;
+		 border: 0.5px solid white;
+		 box-shadow: 0 0 20px rgba(0,0,0, 0.1);
     overflow: hidden;
     width: 100%;
     
@@ -12,7 +12,7 @@
     padding: 20px;
 }
 	 .dark-mode .weather-app{
-		 border-radius: 20px;
+		 border-radius: 10px;
 		  background-color: rgba(255,255,255,0.10);
 		 	 border: 0.5px solid white;
 		box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
