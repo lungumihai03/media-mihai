@@ -63,4 +63,8 @@ async function displayRates() {
     });
 }
 
+// Verificăm imediat când pagina se încarcă
 displayRates();
+
+// Setăm un interval de 15 minute pentru a actualiza cursurile
+setInterval(displayRates, 15 * 60 * 1000); // 15 minute în milisecunde
