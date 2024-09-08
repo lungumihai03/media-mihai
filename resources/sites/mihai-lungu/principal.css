@@ -1,3 +1,11 @@
+.light-mode .banca {
+    filter: invert(1) brightness(0); /* Transformă imaginea albă în negru */
+}
+
+.dark-mode .banca {
+    filter: none; /* Imaginea rămâne albă */
+}
+
 /* inceput style pentru site*/
 	 .responsive-image {
   max-width:70%; 
