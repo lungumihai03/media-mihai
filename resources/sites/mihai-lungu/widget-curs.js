@@ -9,7 +9,7 @@ function formatDate(date) {
     return `${day}.${month}.${year}`;
 }
 
-async function fetchXMLRates() {
+async function fetchXMLRates(retryCount = 3) {
     const today = new Date();
     const formattedDate = formatDate(today);
     const url = `https://bnm.md/ro/official_exchange_rates?get_xml=1&date=${formattedDate}`;
@@ -23,6 +23,15 @@ async function fetchXMLRates() {
         return xmlDoc;
     } catch (error) {
         console.error('Error fetching XML:', error);
+        
+        if (retryCount > 0) {
+            console.log(`Retrying... Attempts left: ${retryCount}`);
+            return new Promise((resolve) => {
+                setTimeout(async () => {
+                    resolve(await fetchXMLRates(retryCount - 1));
+                }, 5000); // Retries after 5 seconds
+            });
+        }
         return null;
     }
 }
@@ -47,7 +56,7 @@ async function displayRates() {
 
     const xmlDoc = await fetchXMLRates();
     if (!xmlDoc) {
-        ratesContainer.innerHTML = 'Error loading rates';
+        ratesContainer.innerHTML = 'Error loading rates. Retrying...';
         return;
     }
 
