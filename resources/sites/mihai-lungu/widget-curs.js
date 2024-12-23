@@ -13,7 +13,7 @@ async function fetchXMLRates(retryCount = 3) {
     const today = new Date();
     const formattedDate = formatDate(today);
     const url = `https://bnm.md/ro/official_exchange_rates?get_xml=1&date=${formattedDate}`;
-    const proxyUrl = 'https://api.allorigins.win/raw?url=';
+    const proxyUrl = 'https://thingproxy.freeboard.io/fetch/';
 
     try {
         const response = await fetch(proxyUrl + encodeURIComponent(url));
