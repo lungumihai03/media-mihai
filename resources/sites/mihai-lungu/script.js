@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const currentHour = new Date().getHours();
         const body = document.body;
 
-        body.classList.toggle("dark-mode", currentHour >= 20 || currentHour < 7);
-        body.classList.toggle("light-mode", !(currentHour >= 20 || currentHour < 7));
+        body.classList.toggle("dark-mode", currentHour >= 18 || currentHour < 7);
+        body.classList.toggle("light-mode", !(currentHour >= 18 || currentHour < 7));
     }
 
     // Verificăm imediat când pagina se încarcă
