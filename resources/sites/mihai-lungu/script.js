@@ -13,9 +13,9 @@
 
         // Setăm imaginea în funcție de modul dark/light
         if (body.classList.contains('dark-mode')) {
-          document.getElementById('cetate').innerHTML = '<img src="../dark-cetate.png" alt="Source Wikipedia.org" title="Source Wikipedia.org" class="cetate">';
+          document.getElementById('cetate').innerHTML = '<img src="https://media.mihailungu.com/resources/images/dark-cetate.png" alt="Source Wikipedia.org" title="Source Wikipedia.org" class="cetate">';
         } else {
-          document.getElementById('cetate').innerHTML = '<img src="../cetate.png" alt="Source Wikipedia.org" title="Source Wikipedia.org" class="cetate">';
+          document.getElementById('cetate').innerHTML = '<img src="https://media.mihailungu.com/resources/images/cetate.png" alt="Source Wikipedia.org" title="Source Wikipedia.org" class="cetate">';
         }
       }
 
