@@ -1,3 +1,7 @@
+ .cetate{
+    width: 100%;
+    height: auto;
+  }
 .light-mode .banca {
     filter: invert(1) brightness(0); /* Transformă imaginea albă în negru */
 }
