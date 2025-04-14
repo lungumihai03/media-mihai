@@ -8,8 +8,8 @@
         const currentHour = new Date().getHours();
         const body = document.body;
 
-        body.classList.toggle("dark-mode", currentHour >= 18 || currentHour < 7);
-        body.classList.toggle("light-mode", !(currentHour >= 18 || currentHour < 7));
+        body.classList.toggle("dark-mode", currentHour >= 20 || currentHour < 7);
+        body.classList.toggle("light-mode", !(currentHour >= 20 || currentHour < 7));
 
         // Setăm imaginea în funcție de modul dark/light
         if (body.classList.contains('dark-mode')) {
