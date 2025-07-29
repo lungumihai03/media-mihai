@@ -111,6 +111,8 @@ https://streaming.televizor-24-tochka.ru/live/296.m3u8
 https://streaming.televizor-24-tochka.ru/live/38.m3u8
 #EXTINF:-1 tvg-id="ChannelOne.ru",Первый HD
 https://streaming.televizor-24-tochka.ru/live/210.m3u8
+#EXTINF:-1 tvg-id="pervy" tvg-logo="https://iptvx.one/picons/pervy.png",Первый HD
+https://edge1.1internet.tv/dash-live2/streams/1tv-dvr/1tvdash.mpd
 #EXTINF:-1 tvg-id="Pobeda.ru",Победа
 https://streaming.televizor-24-tochka.ru/live/43.m3u8
 #EXTINF:-1 tvg-id="Kino24.ru",Kino 24
