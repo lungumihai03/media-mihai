@@ -35,7 +35,7 @@ async function loadAwards(lang) {
                 </a>
             `;
         } else {
-            titleHtml = `<u>${title}</u>`;
+            titleHtml = `${title}`;
         }
 
         html += `
