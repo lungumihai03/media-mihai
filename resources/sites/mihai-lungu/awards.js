@@ -1,6 +1,6 @@
 async function loadAwards(lang) {
 
-    const response = await fetch('/resources/xml/awards.xml');
+    const response = await fetch('https://media.mihailungu.com/resources/xml/awards.xml');
     const xmlText = await response.text();
 
     const parser = new DOMParser();
