@@ -18,7 +18,7 @@ async function loadAwards(lang) {
             award.getElementsByTagName("year")[0].textContent;
 
         const link =
-            award.getElementsByTagName("link")[0].textContent;
+            award.getElementsByTagName("link")[0].textContent.trim();
 
         const title =
             award.getElementsByTagName("title_" + lang)[0].textContent;
@@ -26,12 +26,22 @@ async function loadAwards(lang) {
         const description =
             award.getElementsByTagName("description_" + lang)[0].textContent;
 
-        html += `
-            <p>
-                ${year} -
+        let titleHtml;
+
+        if (link) {
+            titleHtml = `
                 <a href="${link}" target="_blank" class="premii">
                     <u>${title}</u>
                 </a>
+            `;
+        } else {
+            titleHtml = `<u>${title}</u>`;
+        }
+
+        html += `
+            <p>
+                ${year} -
+                ${titleHtml}
                 ${description}
             </p>
         `;
